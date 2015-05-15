@@ -22,6 +22,17 @@
 									   'redirect_uri' => redirectURI,
 									   'code' => $code
 									   );
+// cURL is what we use so that we can have interaction
+// cURL is a way you hit url from your code to get an html response from it
+		$curl = curl_init($url); //setting a curl sections.... url is where we are getting the date from
+		curl_setopt($curl, CURLOPT_POST, true); //setting the options
+		curl_setopt($curl, CURLOPT_POSTFIELDS, $access_token_settings); //setting the postfield to the array we created
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); //setting it equal to 1 because we are getting strings back
+		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); //set this to true in live work production
+
+		$result = curl_exec($curl);
+		curl_close($curl);
+
 ?>
 <!DOCTYPE html>
 <html>
