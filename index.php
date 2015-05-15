@@ -10,6 +10,18 @@
 	define('redirectURI',  'http://localhost/appacademyapi/index.php');
 	define('ImageDirectory',  'pics/');
 	// fucntion connecting to instagram
+// if statement checking for bullions true and not true
+	// checking for get
+	if (isset($_GET['code'])) {
+		$code = ($_GET['code']);
+		$url = 'https://api.instagram.com/oauth/access_token';
+		// array is accessing the code
+		$access_token_settings = array('client_id' => clientID,
+									   'client_secret' => clientSecret,
+									   'grant_type' => 'authorization_code',
+									   'redirect_uri' => redirectURI,
+									   'code' => $code
+									   );
 ?>
 <!DOCTYPE html>
 <html>
