@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body id="good">
+<div id="fr">
 <?php
 	// this is configuring for our PHP server
 	set_time_limit(0);
@@ -5,13 +12,12 @@
 	session_start();
 
 	// we are using our defines and making our constants
-	define('clientID',  '4578f1acb2e2424ebddc2d782e17f511');
-	define('clientSecret',  'ab0f9f3550374f56a29ec4998465f41c');
-	define('redirectURI',  'http://localhost/appacademyapi/index.php');
+	define('clientID',  '20bffbc3a1af4630ad628652749735bf');
+	define('clientSecret',  '536150e9131f4884acb4eaaf1978cb68');
+	define('redirectURI',  'http://localhost/appacademy/index.php');
 	define('ImageDirectory',  'pics/');
 	// fucntion connecting to instagram
-// if statement checking for bullions true and not true
-		function connectToInstagram($url) {
+	function connectToInstagram($url) {
 		$ch = curl_init();
 
 		curl_setopt_array($ch, array(
@@ -33,21 +39,7 @@
 		// echoing userID
 		return $results['data']['0']['id'];
 	}
-
 	// function to print out images onto screen 
-	function printImages ($userID) {
-		$url = 'https://api.instagram.com/v1/users/'.$userID.'/media/recent?client_id='.clientID.'&count=5';
-		$instagramInfo = connectToInstagram($url);
-		$results = json_decode($instagramInfo, true);
-		// Parse through the info one by one
-		foreach($results['data'] as $items){
-			$image_url = $items['images']['low_resolution']['url']; //going through all the results and giving myself back the url of all the pictures because we want to save it in the php server
-			echo '<img src =" '. $image_url .' "/><br/>';
-			// calling a function to save $image_url
-			savePictures($image_url);
-		}
-	}
-		// function to print out images onto screen 
 	function printImages ($userID) {
 		$url = 'https://api.instagram.com/v1/users/'.$userID.'/media/recent?client_id='.clientID.'&count=5';
 		$instagramInfo = connectToInstagram($url);
@@ -69,7 +61,7 @@
 		$destination = ImageDirectory. $filename; //making sure the images doesnt ecist in the storage
 		file_put_contents($destination, file_get_contents($image_url)); //gooes and grabs an imagefile and stores it into our server
 	}
-
+	// if statement checking for bullions true and not true
 	// checking for get
 	if (isset($_GET['code'])) {
 		$code = ($_GET['code']);
@@ -93,17 +85,18 @@
 		curl_close($curl);
 
 		$results = json_decode($result, true);
-
-		$results = json_decode($result, true);
 		
 		$userName = $results['user']['username'];
 
 		$userID = getUserID($userName);
 
 		printImages($userID);
-}	
+	}
 	else {
 ?>
+</div>
+</body>
+</html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -119,7 +112,7 @@
 	<!-- creating a login for people to go and give approval for our web to access their instagram account -->
 	<!-- after we get the approval we are going to have the info so we can play with it -->
 	<!-- echoing the constants and showing the code from instagram -->
-	<a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">LOGIN</a>
+	<div id="fu"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">LOGIN</a></div>
 	<script src-"js/main.js"></script>
 </body>
 </html>

@@ -1,10 +1,38 @@
 body {
-	background-color: gray;
+	background-image: url("http://cache.desktopnexus.com/thumbseg/760/760370-bigthumbnail.jpg");
+	background-size: cover;
 	font-size: 160px;
 	text-align: center;
-	padding-top: 15%;
 }	
 a {
 	text-decoration: none;
-	color: black;
+	color: #7A7A7A;
+	text-align: center;
+	font-size: 50px;
+}
+a:hover { 
+    color: white;
+}
+#fu {
+	background-color: black;
+	width: 200px;
+	height: 100px;
+	padding-top: 5%;
+	margin-left: 63%;
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation : portrait) { 
+	a {
+		font-size: 20px;
+		text-align: center;
+		color: white;
+	}
+	body {
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADjCAMAAADdXVr2AAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOA8W9AAHiq1isAAAAAElFTkSuQmCC");
+		/*background-repeat: no-repeat;*/
+		background-size: 400px;
+	  background-width: 667px;
+	}
+	#fu {
+		margin-right: 100%;
+	}
 }
