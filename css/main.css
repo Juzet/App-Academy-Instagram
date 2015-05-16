@@ -2,11 +2,10 @@
 	background-color: #8F8C8C;
 	text-align: center;
 	font-size: 10px;
-	padding-top: 5%;
 }
 #fr {
 	background-color: black;
-	opacity: 0.2;
-	width: 600px;
-	margin-left: 40%;
+	opacity: 0.5;
+	width: 1000px;
+	margin-left: 30%;
 }
