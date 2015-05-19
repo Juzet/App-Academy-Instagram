@@ -27,12 +27,12 @@ a:hover {
 		color: white;
 	}
 	body {
-		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADjCAMAAADdXVr2AAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQdvoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOA8W9AAHiq1isAAAAAElFTkSuQmCC");
-		/*background-repeat: no-repeat;*/
-		background-size: 400px;
-	  background-width: 667px;
+		background-color: black;		
+		background-repeat: no-repeat;
+		text-align: center;
+
 	}
 	#fu {
-		margin-right: 100%;
+		text-align: center;
 	}
 }

@@ -1,11 +1,7 @@
 #good {
-	background-color: #8F8C8C;
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJGUMgAACy5m3WBhmdHOTJi8CYDPbiWY18dn44It2mskQbOeE8_Q");
 	text-align: center;
 	font-size: 10px;
+	margin: 5px;
 }
-#fr {
-	background-color: black;
-	opacity: 0.5;
-	width: 1000px;
-	margin-left: 30%;
-}
+
