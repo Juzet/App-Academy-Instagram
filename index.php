@@ -39,7 +39,14 @@
 		$results = json_decode($instagramInfo, true);
 		// Parse through the info one by one
 		foreach($results['data'] as $items){
+		echo '<head>
+		         <link rel="stylesheet" href="css/main2.css">
+		      </head>';
+			echo '<div id="go">';
+			echo '<br>';
 			$image_url = $items['images']['standard_resolution']['url']; //going through all the results and giving myself back the url of all the pictures because we want to save it in the php server
+			echo '</br>';
+			echo '</div>';
 			echo '<img src =" '. $image_url .' "/><br/>';
 			// calling a function to save $image_url
 			savePictures($image_url);
@@ -107,7 +114,7 @@
 	<!-- creating a login for people to go and give approval for our web to access their instagram account -->
 	<!-- after we get the approval we are going to have the info so we can play with it -->
 	<!-- echoing the constants and showing the code from instagram -->
-	<div id="fu"><a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">LOGIN</a></div>
+	<a href="https://api.instagram.com/oauth/authorize/?client_id=<?php echo clientID; ?>&redirect_uri=<?php echo redirectURI; ?>&response_type=code">LOGIN</a>
 	<script src-"js/main.js"></script>
 	</body>
 </html>
